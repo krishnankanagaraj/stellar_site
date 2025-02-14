@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { Button, Box } from "@mui/material";
 
 function Herosection() {
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,7 +27,7 @@ function Herosection() {
 
   return (
     <>
-      <Box id="home" sx={{ height: '100vh' }}>
+      <Box id="home" sx={{ height: "90vh" }}>
         <section className="container pt-5 mt-md-5 mt-3">
           <div className="row">
             <motion.div
@@ -63,13 +62,13 @@ function Herosection() {
                   className="lead text-capitalize justified text-md-start text-center"
                   variants={itemVariants}
                 >
-                  a strong online presence is no longer just an option, it&apos;s a
-                  necessity
+                  a strong online presence is no longer just an option,
+                  it&apos;s a necessity
                 </motion.p>
                 <div>
                   <motion.div
                     component="button"
-                    style={{maxWidth:'fit-content'}}
+                    style={{ maxWidth: "fit-content" }}
                     className="mx-auto mx-md-0"
                     variants={itemVariants}
                     whileHover={{
@@ -78,10 +77,7 @@ function Herosection() {
                     }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button
-                      variant="contained"
-                      color="secondary"
-                    >
+                    <Button variant="contained" color="secondary">
                       Get Started
                     </Button>
                   </motion.div>
