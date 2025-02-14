@@ -1,8 +1,10 @@
 import heroImage from "../assets/Hero.svg";
 import { motion } from "framer-motion";
-import { Button, Box } from "@mui/material";
+import { Button, Box, useTheme, useMediaQuery } from "@mui/material";
 
 function Herosection() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,8 +29,8 @@ function Herosection() {
 
   return (
     <>
-      <Box id="home" sx={{ height: "90vh" }}>
-        <section className="container pt-5 mt-md-5 mt-3">
+      <Box id="home" >
+        <section className="container pt-5 pb-5 mt-md-5 mt-3">
           <div className="row">
             <motion.div
               className="col-md-6 order-md-2 order-1"
