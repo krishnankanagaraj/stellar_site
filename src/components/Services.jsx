@@ -56,7 +56,11 @@ const Services = () => {
   };
 
   return (
-    <Box className='container' sx={{ py: 8, bgcolor: 'background', overflow: 'hidden' }}>
+    <Box 
+      id="services"
+      className='container' 
+      sx={{ py: 8, bgcolor: 'background', overflow: 'hidden' }}
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

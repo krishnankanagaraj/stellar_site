@@ -70,7 +70,10 @@ const TeamSection = () => {
   };
 
   return (
-    <Box className="container" sx={{ py: 8, bgcolor: 'background', overflow: 'hidden' }}>
+    <Box 
+      id="team"
+      className="container" 
+      sx={{ py: 8, bgcolor: 'background', overflow: 'hidden' }}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

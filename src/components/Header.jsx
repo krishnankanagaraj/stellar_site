@@ -36,14 +36,21 @@ const Header = () => {
 
   const MotionAppBar = motion(AppBar);
 
-  const menuItems = [
-    "Home",
-    "About",
-    "Services",
-    "Products",
-    "Our Team",
-    "Contact",
+  const pages = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Products', href: '#products' },
+    { name: 'Our Team', href: '#team' },
+    { name: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <Box sx={{ display: "flex", width: "100%", overflow: "hidden" }}>
@@ -106,14 +113,14 @@ const Header = () => {
             <Box
               sx={{ display: "flex", alignItems: "center", flexWrap: "nowrap" }}
             >
-              {menuItems.map((item, index) => (
+              {pages.map((page, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button
-                    value={item.split(" ").join("").toLowerCase()}
+                    onClick={() => handleNavClick(page.href)}
                     sx={{
                       color: "secondary.main",
                       mx: 1,
@@ -122,7 +129,7 @@ const Header = () => {
                       },
                     }}
                   >
-                    {item}
+                    {page.name}
                   </Button>
                 </motion.div>
               ))}
@@ -161,10 +168,10 @@ const Header = () => {
         >
           <Box onClick={handleDrawerToggle} sx={{ marginTop: "25px" }}>
             <List>
-              {menuItems.map((item) => (
-                <ListItem key={item} disablePadding>
-                  <ListItemButton sx={{ textAlign: "start" }}>
-                    <ListItemText primary={item} />
+              {pages.map((page) => (
+                <ListItem key={page.name} disablePadding>
+                  <ListItemButton sx={{ textAlign: "start" }} onClick={() => handleNavClick(page.href)}>
+                    <ListItemText primary={page.name} />
                   </ListItemButton>
                 </ListItem>
               ))}

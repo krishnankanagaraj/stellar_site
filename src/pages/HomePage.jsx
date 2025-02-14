@@ -1,4 +1,5 @@
 import About from "../components/About"
+import BackToTop from "../components/BackToTop"
 import ContactUs from "../components/ContactUs"
 import Footer from "../components/Footer"
 import Herosection from "../components/Herosection"
@@ -16,6 +17,7 @@ const HomePage = () => {
       <TeamSection/>
       <ContactUs/>
       <Footer/>
+      <BackToTop />
     </>
   )
 }
