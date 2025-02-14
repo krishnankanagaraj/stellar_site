@@ -61,6 +61,7 @@ const About = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
+            className="px-md-5 px-3"
           >
             <Typography
               variant="h3"
