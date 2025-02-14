@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import { Box, Typography, Grid, useTheme } from '@mui/material';
+import { Box, Typography, Grid } from '@mui/material';
 import aboutImg from '../assets/About.svg'
 
 const About = () => {
-  const theme = useTheme();
 
   const pathVariants = {
     hidden: { pathLength: 0, opacity: 0 },
@@ -30,10 +29,10 @@ const About = () => {
   };
 
   return (
-    <Box className="container" sx={{ py: 8, minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
+    <Box className="container" sx={{ py: 8, minHeight: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
       <Grid container spacing={4} alignItems="center">
         {/* SVG Animation Side */}
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} sx={{ overflow: 'hidden' }}>
         <motion.div
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +43,7 @@ const About = () => {
               src={aboutImg}
               alt="About Section SVG"
               className="w-100"
-              style={{ width: '100%' }}
+              style={{ width: '100%', maxWidth: '100%', height: 'auto' }}
               variants={pathVariants}
               initial="hidden"
               whileInView="visible"

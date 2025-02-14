@@ -23,7 +23,7 @@ const Header = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const { scrollY } = useScroll();
-  
+
   const headerShadow = useTransform(
     scrollY,
     [0, 50],
@@ -46,16 +46,19 @@ const Header = () => {
   ];
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", width: "100%", overflow: "hidden" }}>
       <MotionAppBar
         component="nav"
-        className="d-flex"
         style={{ boxShadow: headerShadow }}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
+        sx={{ width: "100%" }}
       >
-        <Toolbar className="w-100 px-0 d-flex justify-content-between container">
+        <Toolbar
+          sx={{ width: "100%", maxWidth: "100vw", px: { xs: 2, sm: 3 } }}
+          className="d-flex justify-content-between align-items-center"
+        >
           {isMobile && (
             <Typography
               variant="h6"
@@ -71,6 +74,7 @@ const Header = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   gap: "5px",
+                  width: "100%",
                   marginLeft: "22px",
                 }}
               >
@@ -99,7 +103,9 @@ const Header = () => {
             </Typography>
           )}
           {!isMobile && (
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box
+              sx={{ display: "flex", alignItems: "center", flexWrap: "nowrap" }}
+            >
               {menuItems.map((item, index) => (
                 <motion.div
                   key={index}
@@ -147,7 +153,7 @@ const Header = () => {
             display: { xs: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: { xs: 300, sm: "50vw", md: 450 },
+              width: { xs: 250, sm: 300 },
               bgcolor: "secondary.main",
               color: "white",
             },

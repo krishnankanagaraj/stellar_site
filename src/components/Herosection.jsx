@@ -28,7 +28,7 @@ function Herosection() {
 
   return (
     <>
-      <section className="container py-5">
+      <section className="container py-5 mt-3">
         <div className="row">
           <motion.div
             className="col-md-6 order-md-2 order-2"
@@ -69,6 +69,7 @@ function Herosection() {
                 <motion.div
                   component="button"
                   style={{maxWidth:'fit-content'}}
+                  className="mx-auto mx-md-0"
                   variants={itemVariants}
                   whileHover={{
                     boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
