@@ -11,7 +11,7 @@ const theme = createTheme({
       main: '#F0F8FF', // aliceblue in hex
     },
     secondary: {
-      main: '#48A6A7', // deep purple in hex
+      main: '#dc8058', 
     },
     background: {
       default: '#F0F8FF', // aliceblue in hex

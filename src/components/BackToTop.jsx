@@ -38,7 +38,7 @@ const BackToTop = () => {
             },
           }}
         >
-          <KeyboardArrowUpIcon />
+          <KeyboardArrowUpIcon sx={{color:'white'}} />
         </Fab>
       </Box>
     </Zoom>

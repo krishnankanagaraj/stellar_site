@@ -15,8 +15,10 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { RocketLaunch } from "@mui/icons-material";
+import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import ProgressBar from "./ProgressBar";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -160,14 +162,19 @@ const Header = () => {
             display: { xs: "block", md: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
-              width: { xs: 250, sm: 300 },
+              width:'100%',
               bgcolor: "secondary.main",
               color: "white",
             },
           }}
         >
-          <Box onClick={handleDrawerToggle} sx={{ marginTop: "25px" }}>
-            <List>
+          <Box sx={{ mt: 0 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
+              <IconButton onClick={handleDrawerToggle} sx={{ color: 'white', '&:hover': { bgcolor: 'rgba(255,255,255,0.1)' } }}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
+            <List sx={{ mt: 2 }}>
               {pages.map((page) => (
                 <ListItem key={page.name} disablePadding>
                   <ListItemButton sx={{ textAlign: "start" }} onClick={() => handleNavClick(page.href)}>
@@ -179,6 +186,7 @@ const Header = () => {
           </Box>
         </Drawer>
       </nav>
+      <ProgressBar/>
     </Box>
   );
 };

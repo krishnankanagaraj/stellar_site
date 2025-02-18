@@ -1,10 +1,8 @@
-import heroImage from "../assets/Hero.svg";
+import heroImage from "../assets/web-development-coding-programming-futuristic-banner-computer-code-laptop_3482-5582.avif";
 import { motion } from "framer-motion";
-import { Button, Box, useTheme, useMediaQuery } from "@mui/material";
+import { Box } from "@mui/material";
 
 function Herosection() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -41,7 +39,7 @@ function Herosection() {
               <motion.img
                 src={heroImage}
                 alt="Hero Section SVG"
-                className="img-fluid"
+                className="img-fluid rounded"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               />
@@ -67,23 +65,6 @@ function Herosection() {
                   a strong online presence is no longer just an option,
                   it&apos;s a necessity
                 </motion.p>
-                <div>
-                  <motion.div
-                    component="button"
-                    style={{ maxWidth: "fit-content" }}
-                    className="mx-auto mx-md-0"
-                    variants={itemVariants}
-                    whileHover={{
-                      boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-                      scale: 1.05,
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button variant="contained" color="secondary">
-                      Get Started
-                    </Button>
-                  </motion.div>
-                </div>
               </motion.div>
             </div>
           </div>
